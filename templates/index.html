@@ -1,0 +1,11 @@
+<a href="/admin">Admin Page</a> | <a href="/member">Member Page</a>
+<br><br>
+{% if current_user.is_authenticated %}
+	Current user: {{current_user.email}}
+	| Role: {% for role in current_user.roles%}
+       			 {{role.name}}
+   		{% endfor %} <br><br>
+	<a href="/logout">Logout</a>
+{% endif %}
+<br><br>
+
